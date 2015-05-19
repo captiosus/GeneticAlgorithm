@@ -45,7 +45,10 @@ void setup() {
   }
   population = new Individual[POPULATION_SIZE];
   population[0] = new Individual(0.0, 0.0);
-  rad = 5 + int(pow(population[0].RADIUS_GENE_SIZE, 2));
+  rad = 5;
+  for (int i = 0; i < population[0].RADIUS_GENE_SIZE; i++) {
+    rad += pow(2, i);
+  }  
   populate();
   size(row * rad * 2, col * rad * 2);
 }
